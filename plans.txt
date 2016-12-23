@@ -9,6 +9,9 @@ Classes-
 			(random enemies)
 
 		NPCs
+		
+		
+		Bosses
 
 	Skills
 
@@ -25,3 +28,7 @@ Classes-
 		Items inside of it
 		
 		Currency 
+
+	Floor 
+
+	Stages
