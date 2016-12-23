@@ -1,0 +1,27 @@
+Classes- 
+	 World
+	 
+	 Character
+		Hero
+			(these classes)
+		
+		Enemy
+			(random enemies)
+
+		NPCs
+
+	Skills
+
+	Items
+		Weapons
+
+		Armor
+
+		Potions
+
+		etc
+
+	Inventory
+		Items inside of it
+		
+		Currency 
