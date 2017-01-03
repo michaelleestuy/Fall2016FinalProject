@@ -1,0 +1,6 @@
+Character-
+	HP and MP private variables- ints
+	changeHP(int a), changeMP(int a)- changes HP/MP value by a
+	getHP(), getMP()- returns HP/MP
+
+
