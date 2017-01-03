@@ -18,6 +18,42 @@ public abstract class Character{
 	return MP;
     }
 
-    
+
+    private int batk;
+    private int bdef;
+    private int bmagicatk;
+    private int bmagicdef;
+
+    public void changebatk(int a){
+	batk += a;
+    }
+
+    public void changebdef(int a){
+	bdef += a;
+    }
+
+    public void changebmagicatk(int a){
+	bmagicatk += a;
+    }
+
+    public void changebmagicdef(int a){
+	bmagicdef += a;
+    }
+
+    public int getbatk(){
+	return batk;
+    }
+
+    public int getbdef(){
+	return bdef;
+    }
+
+    public int getbmagicatk(){
+	return bmagicatk;
+    }
+
+    public int getbmagicdef(){
+	return bmagicdef;
+    }
 
 }

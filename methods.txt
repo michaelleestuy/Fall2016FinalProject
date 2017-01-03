@@ -3,4 +3,6 @@ Character-
 	changeHP(int a), changeMP(int a)- changes HP/MP value by a
 	getHP(), getMP()- returns HP/MP
 
-
+	batk, bdef, bmagicatk, bmagicdef- ints
+	changebatk, changebdef, changebmagicatk, changebmagicdef- changes the value
+	getbatk .... - gets the value
