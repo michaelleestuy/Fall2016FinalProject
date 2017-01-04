@@ -57,4 +57,8 @@ public abstract class Character{
 	return bmagicdef;
     }
 
+    public boolean checkDead(){
+	return (HP == 0);
+    }
+
 }
