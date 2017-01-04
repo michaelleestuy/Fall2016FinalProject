@@ -1,4 +1,5 @@
 public abstract class Character{
+    //
     private int HP;
     private int MP;
 
