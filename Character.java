@@ -1,7 +1,20 @@
 public abstract class Character{
     //
-    private int HP;
-    private int MP;
+    private int HPmax = 0;
+    private int MPmax = 0;
+
+    public void setMaxHP(int a){
+	HPmax += a;
+    }
+
+    public void setMaxMP(int a){
+	MPmax += a;
+    }
+
+
+
+    private int HP = 0;
+    private int MP = 0;
 
     public void changeHP(int a){
 	HP += a;

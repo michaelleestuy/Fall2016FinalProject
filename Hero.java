@@ -1,10 +1,17 @@
 import java.util.*;
 public abstract class Hero extends Character{
     
-    private int XP;
-    private int money;
-    private int level;
+    private int XP = 0;
+    private int money = 0;
+    private int level = 1;
     private ArrayList<Items> items;
+    private ArrayList<Skills> skills;
+    private String name;
+
+
+    public void setName(String n){
+	name = n;
+    }
 
     public int getMoney(){
 	return money;
@@ -22,10 +29,14 @@ public abstract class Hero extends Character{
 	XP += a;
     }
 
-    public void levelUp(){
+    
+
+    public boolean levelUp(){
 	if(XP >= (level * 50)){
 	    level++;
+	    return true;
 	}
+	return false;
     }
 }
 
