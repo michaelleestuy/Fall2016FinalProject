@@ -1,0 +1,4 @@
+import java.util.*;
+
+public abstract class Enemy extends Character{
+    private ArrayList<Integer> drops
