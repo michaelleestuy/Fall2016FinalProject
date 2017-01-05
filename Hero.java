@@ -1,8 +1,10 @@
+import java.util.*;
 public abstract class Hero extends Character{
     
     private int XP;
     private int money;
     private int level;
+    private ArrayList<Items> items;
 
     public int getMoney(){
 	return money;
@@ -25,5 +27,6 @@ public abstract class Hero extends Character{
 	    level++;
 	}
     }
+}
 
     
