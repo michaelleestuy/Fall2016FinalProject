@@ -11,6 +11,14 @@ public abstract class Character{
 	MPmax += a;
     }
 
+    private String name;
+
+    public void setName(String n){
+	name  = n;
+    }
+    public String toString(){
+	return name;
+    }
 
 
     private int HP = 0;

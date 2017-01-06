@@ -22,12 +22,6 @@ public class Warrior extends Hero{
 	}
     }
 
-    public void useSkill(int a){
-	int dam = getSkill(a).getDamage();
-	int man = getSkill(a).getMana();
-	System.out.println("did " + dam + " damage");
-	System.out.println("used " + man + " mana");
-    }
 
     
 
