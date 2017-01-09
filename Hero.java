@@ -3,11 +3,18 @@ public abstract class Hero extends Character{
     
     private int XP = 0;
     private int money = 0;
-    private int level = 1;
+    public int level = 1;
     private ArrayList<Items> items = new ArrayList<Items>();
     private ArrayList<Skills> skills = new ArrayList<Skills>();
 
 
+    public void display(){
+	super.display();
+	System.out.println("Level: " + level);
+	System.out.println("XP: " + getXP() + "/" + (level * 50));
+	System.out.println();
+    }
+    
     public void addSkill(Skills a){
 	skills.add(a);
     }
@@ -26,6 +33,7 @@ public abstract class Hero extends Character{
 	System.out.println(this + " used " + getSkill(a) + " on " + b);
 	System.out.println("did " + dam + " damage");
 	System.out.println("used " + man + " mana");
+	System.out.println();
 	this.changeMP(-1 * man);
 	b.changeHP(-1 * dam);
     }
@@ -47,7 +55,11 @@ public abstract class Hero extends Character{
 	XP += a;
     }
 
-    
+    public void isDead(){
+	if(checkDead()){
+	    System.out.println(this + " has died");
+	}
+    }
 
     public boolean levelUp(){
 	if(XP >= (level * 50)){

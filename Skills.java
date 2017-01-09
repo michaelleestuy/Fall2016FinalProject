@@ -1,8 +1,13 @@
 import java.util.*;
-public abstract class Skills{
-    private int damage = 0;
-    private int mana = 0;
+public class Skills{
+    private int damage;
+    private int mana;
 
+    public Skills(){
+	damage = 0;
+	mana = 0;
+    }
+    
     public void changeDamage(int a){
 	damage += a;
     }
@@ -22,3 +27,4 @@ public abstract class Skills{
 
 
 }
+

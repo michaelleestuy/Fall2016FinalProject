@@ -19,11 +19,15 @@ public class Warrior extends Hero{
 	    setMaxMP(5);
 	    changeHP(25);
 	    changeMP(5);
+	    System.out.println(this + " leveled up to " + level);
+	    System.out.println("+25 HP");
+	    System.out.println("+5 MP");
+	    System.out.println();
 	}
     }
 
 
 
     
-
+    
 }
