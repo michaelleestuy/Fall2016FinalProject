@@ -16,11 +16,19 @@ public abstract class Hero extends Character{
 	return skills.get(a);
     }
 
-    public void useSkill(int a, Character target){
-	getSkill(a).useOn(target);
-	changeMP(-1 * getSkill(a).getMana());
+    public void useSkill(int a, Character b){
+	int dam = getSkill(a).getDamage();
+	int man = getSkill(a).getMana();
+	if(man > getMP()){
+	    System.out.println(this + " does not have enough mana to use " + getSkill(a));
+	    return;
+	}
+	System.out.println(this + " used " + getSkill(a) + " on " + b);
+	System.out.println("did " + dam + " damage");
+	System.out.println("used " + man + " mana");
+	this.changeMP(-1 * man);
+	b.changeHP(-1 * dam);
     }
-
 
 
     public int getMoney(){
