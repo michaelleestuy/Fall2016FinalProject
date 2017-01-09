@@ -1,17 +1,20 @@
 import java.io.*;
 public class AkhmedovDungeon{
-    
+
+    private static final String CLEAR_SCREEN =  "\033[2J";
     String name;
     String Class;
     String[] classes = {"warrior", "mage", "hunter"};
     BufferedReader BR = new BufferedReader(new InputStreamReader(System.in));
     public static void main(String[] args){
 	AkhmedovDungeon AD = new AkhmedovDungeon();
-	System.out.println("Welcome to Mr. Akhmedov's Dungeon");
+	System.out.print(CLEAR_SCREEN);
+	System.out.println("Welcome to Mr. Akhmedov's Dungeon. I am Mr. Akhmedov.");
 	System.out.println("What is your name, adventurer?");
 	AD.initialize();
 	AD.printClass();
-	
+	//Hero a = new Hero(name);
+	System.out.println("Prepare for a magical journey. Here's 10 gold to get you started");	
     }
 
     public void initialize(){
@@ -39,6 +42,11 @@ public class AkhmedovDungeon{
 	    x += " a " + classes[i] + ",";
 	}
         x = x.substring(0, x.length() - 1) + "?";
+	x += " (";
+	for(int i = 0; i < classes.length; i++){
+	    x += i + ", ";
+	}
+	x = x.substring(0, x.length() - 2) + ")";
 	System.out.println(x);
 	int temp;
 	try{
@@ -50,6 +58,7 @@ public class AkhmedovDungeon{
 		throw new Exception();
 	    }
 	    Class = classes[temp];
+	    System.out.println("Congrats, you are now a " + Class);
 	}
         catch(Exception err){
 	    System.out.println("Please input a valid number");
