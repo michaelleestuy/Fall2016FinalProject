@@ -19,23 +19,15 @@ public class Warrior extends Hero{
 	    setMaxMP(5);
 	    changeHP(25);
 	    changeMP(5);
+	    System.out.println(this + " leveled up to " + level);
+	    System.out.println("+25 HP");
+	    System.out.println("+5 MP");
+	    System.out.println();
 	}
     }
 
-    public void useSkill(int a, Character b){
-	int dam = getSkill(a).getDamage();
-	int man = getSkill(a).getMana();
-	if(man > getMP()){
-	    System.out.println(this + " does not have enough mana to use " + getSkill(a));
-	    return;
-	}
-	System.out.println(this + " used " + getSkill(a) + " on " + b);
-	System.out.println("did " + dam + " damage");
-	System.out.println("used " + man + " mana");
-	this.changeMP(-1 * man);
-	b.changeHP(-1 * dam);
-    }
+
 
     
-
+    
 }

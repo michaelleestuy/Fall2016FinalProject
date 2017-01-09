@@ -87,7 +87,7 @@ public abstract class Character{
     }
 
     public boolean checkDead(){
-	return (HP == 0);
+	return (HP <= 0);
     }
 
 }
