@@ -1,7 +1,36 @@
 public abstract class Character{
     //
-    private int HP;
-    private int MP;
+
+
+    public void display(){
+	System.out.println(this);
+	System.out.println("HP: " + HP + "/" + HPmax);
+	System.out.println("MP: " + MP + "/" + MPmax);
+    }
+
+    private int HPmax = 0;
+    private int MPmax = 0;
+
+    public void setMaxHP(int a){
+	HPmax += a;
+    }
+
+    public void setMaxMP(int a){
+	MPmax += a;
+    }
+
+    private String name;
+
+    public void setName(String n){
+	name  = n;
+    }
+    public String toString(){
+	return name;
+    }
+
+
+    private int HP = 0;
+    private int MP = 0;
 
     public void changeHP(int a){
 	HP += a;

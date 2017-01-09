@@ -1,7 +1,7 @@
 Classes- 
 	 World
 	 
-	 Character *
+	 Character
 		Hero
 			(these classes)
 		
@@ -26,7 +26,7 @@ Classes-
 
 		etc
 
-not a class Inventory
+	Inventory
 		Items inside of it
 		
 		Currency 

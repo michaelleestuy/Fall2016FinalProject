@@ -6,7 +6,3 @@ Character-
 	batk, bdef, bmagicatk, bmagicdef- ints
 	changebatk, changebdef, changebmagicatk, changebmagicdef- changes the value
 	getbatk .... - gets the value
-
-Items-
-	quantity and sellprice variables- ints
-
