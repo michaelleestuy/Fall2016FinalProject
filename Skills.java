@@ -1,7 +1,7 @@
 import java.util.*;
 public abstract class Skills{
-    private int damage;
-    private int mana;
+    private int damage = 0;
+    private int mana = 0;
 
     public void changeDamage(int a){
 	damage += a;
