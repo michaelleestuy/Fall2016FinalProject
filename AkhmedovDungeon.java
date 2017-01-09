@@ -46,13 +46,15 @@ public class AkhmedovDungeon{
 	    if(temp > classes.length - 1){
 		throw new Exception();
 	    }
+	    if(temp < 0){
+		throw new Exception();
+	    }
+	    Class = classes[temp];
 	}
         catch(Exception err){
 	    System.out.println("Please input a valid number");
 	    printClass();
-	}
-	Class = classes[temp];
-	
+	}	
     }
            
 	   
