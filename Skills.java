@@ -19,8 +19,6 @@ public abstract class Skills{
 	return mana;
     }
 
-    public void useOn(Character a){
 
-    }
 
 }

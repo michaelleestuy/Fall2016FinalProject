@@ -1,5 +1,13 @@
 public abstract class Character{
     //
+
+
+    public void display(){
+	System.out.println(this);
+	System.out.println("HP: " + HP + "/" + HPmax);
+	System.out.println("MP: " + MP + "/" + MPmax);
+    }
+
     private int HPmax = 0;
     private int MPmax = 0;
 
