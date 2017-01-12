@@ -3,6 +3,9 @@ import java.util.*;
 public class AkhmedovDungeon{
 
     private static final String CLEAR_SCREEN =  "\033[2J";
+
+    Hero h;
+
     String name;
     String Class;
     int worldSize;
@@ -24,6 +27,8 @@ public class AkhmedovDungeon{
 		System.out.println("LEVEL " + k);
 		for(int u = 0; u < stageSize; u++){
 		    System.out.println("STAGE " + u);
+		    Goblin b = new Goblin();
+		    while(
 		}
 	    }
 	}
@@ -40,6 +45,7 @@ public class AkhmedovDungeon{
 	    System.out.println("Welcome, " + name);
 	    worldSize = ((int)Math.round(Math.random() * 2)) + 3;
 	    levelSize = ((int)Math.round(Math.random() * 3)) + 2;
+	    stageSize = ((int)Math.round(Math.random() * 3)) + 2;
 	    return;
 	}
 	catch(Exception err){
@@ -75,6 +81,15 @@ public class AkhmedovDungeon{
 	    }
 	    Class = classes[temp];
 	    System.out.println("Congrats, you are now a " + Class);
+	    if(Class.equals("warrior")){
+		h = new Warrior(name);
+	    }
+	    if(Class.equals("mage")){
+		h = new Warrior(name);
+	    }
+	    if(Class.equals("hunter")){
+		h = new Warrior(name);
+	    }
 	}
         catch(Exception err){
 	    System.out.println("Please input a valid number");
