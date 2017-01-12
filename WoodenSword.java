@@ -8,6 +8,9 @@ public class WoodenSword extends Items{
 	setPrice(10);
     }
 
+    public String toString(){
+	return "Wooden Sword";
+    }
 
     
 }
