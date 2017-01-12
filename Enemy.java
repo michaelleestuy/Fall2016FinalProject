@@ -6,7 +6,6 @@ public abstract class Enemy extends Character{
 
     public void display(){
 	super.display();
-	System.out.println();
     }
     
     public void setXP(int a){
@@ -23,7 +22,6 @@ public abstract class Enemy extends Character{
 	System.out.println(this + " has been defeated!");
 	a.changeXP(XP);
 	System.out.println(a + " gained " + XP + " XP");
-	System.out.println();
     }
 
 }

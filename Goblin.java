@@ -17,11 +17,11 @@ public class Goblin extends Enemy{
 	dam =  5;
     }
     
-    public void attack(Character a){
+    public void attack(Hero a){
+	int damt = dam - a.totalDef();
 	System.out.println(this + " attacked " + a);
 	System.out.println("did " + dam + " damage");
-	a.changeHP(-1 * dam);
-	System.out.println();
+	a.changeHP(-1 * damt);
     }
 
     

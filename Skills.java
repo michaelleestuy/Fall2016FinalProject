@@ -1,12 +1,10 @@
 import java.util.*;
-public class Skills{
-    private int damage;
-    private int mana;
+public abstract class Skills{
+    private int damage = 0;
+    private int mana = 0;
 
-    public Skills(){
-	damage = 0;
-	mana = 0;
-    }
+    
+    abstract void useOn(Hero user, Enemy target);
     
     public void changeDamage(int a){
 	damage += a;
