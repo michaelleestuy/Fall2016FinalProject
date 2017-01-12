@@ -1,4 +1,5 @@
 import java.io.*;
+import java.util.*;
 public class AkhmedovDungeon{
 
     private static final String CLEAR_SCREEN =  "\033[2J";
@@ -17,7 +18,17 @@ public class AkhmedovDungeon{
 	AD.printClass();
 	//Hero a = new Hero(name);
 	System.out.println("Prepare for a magical journey. Here's 10 gold to get you started");	
-	// 
+	for(int i = 0; i < worldSize; i++){
+	    System.out.println("WORLD " + i);
+	    for(int k = 0; k < levelSize; k++){
+		System.out.println("LEVEL " + k);
+		for(int u = 0; u < stageSize; u++){
+		    System.out.println("STAGE " + u);
+		}
+	    }
+	}
+		
+	    
     }
 
     public void initialize(){
