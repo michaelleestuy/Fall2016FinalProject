@@ -12,7 +12,15 @@ public abstract class Hero extends Character{
 	super.display();
 	System.out.println("Level: " + level);
 	System.out.println("XP: " + getXP() + "/" + (level * 50));
-	System.out.println();
+	
+    }
+
+    public void addItem(Items a){
+	items.add(a);
+    }
+
+    public Items getItem(int a){
+	return items.get(a);
     }
     
     public void addSkill(Skills a){
@@ -23,7 +31,48 @@ public abstract class Hero extends Character{
 	return skills.get(a);
     }
 
-    public void useSkill(int a, Character b){
+    public int totalAtk(){
+	int a = 0;
+	for(Items item : items){
+	    a += item.getAtk();
+	}
+	a += getbatk();
+	return a;
+    }
+
+    public int totalDef(){
+	int a = 0;
+	for(Items item : items){
+	    a += item.getDef();
+	}
+	a += getbdef();
+	return a;
+    }
+
+    public int totalMagicAtk(){
+	int a = 0;
+	for(Items item : items){
+	    a += item.getMagicAtk();
+	}
+	a += getbmagicatk();
+	return a;
+    }
+
+    public int totalMagicDef(){
+	int a = 0;
+	for(Items item : items){
+	    a += item.getMagicDef();
+	}
+	a += getbmagicdef();
+	return a;
+    }
+  
+
+    public void useSkill(int a, Enemy b){
+	Skills skill = getSkill(a);
+	skill.useOn(this, b);
+
+	/*
 	int dam = getSkill(a).getDamage();
 	int man = getSkill(a).getMana();
 	if(man > getMP()){
@@ -36,6 +85,7 @@ public abstract class Hero extends Character{
 	System.out.println();
 	this.changeMP(-1 * man);
 	b.changeHP(-1 * dam);
+	*/
     }
 
 

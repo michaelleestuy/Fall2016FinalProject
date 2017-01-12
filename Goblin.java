@@ -21,7 +21,6 @@ public class Goblin extends Enemy{
 	System.out.println(this + " attacked " + a);
 	System.out.println("did " + dam + " damage");
 	a.changeHP(-1 * dam);
-	System.out.println();
     }
 
     
