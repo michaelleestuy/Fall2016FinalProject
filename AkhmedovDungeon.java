@@ -4,6 +4,8 @@ public class AkhmedovDungeon{
     private static final String CLEAR_SCREEN =  "\033[2J";
     String name;
     String Class;
+    int worldSize;
+    int levelSize;
     String[] classes = {"warrior", "mage", "hunter"};
     BufferedReader BR = new BufferedReader(new InputStreamReader(System.in));
     public static void main(String[] args){
@@ -15,6 +17,7 @@ public class AkhmedovDungeon{
 	AD.printClass();
 	//Hero a = new Hero(name);
 	System.out.println("Prepare for a magical journey. Here's 10 gold to get you started");	
+	// 
     }
 
     public void initialize(){
@@ -24,6 +27,8 @@ public class AkhmedovDungeon{
 		throw new Exception();
 	    }
 	    System.out.println("Welcome, " + name);
+	    worldSize = ((int)Math.round(Math.random() * 2)) + 3;
+	    levelSize = ((int)Math.round(Math.random() * 3)) + 2;
 	    return;
 	}
 	catch(Exception err){
