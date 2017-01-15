@@ -7,6 +7,39 @@ public abstract class Hero extends Character{
     private ArrayList<Items> items = new ArrayList<Items>();
     private ArrayList<Skills> skills = new ArrayList<Skills>();
 
+    private int equippedweapon;
+    private int equippedarmor;
+
+    public void resetWeapon(){
+	equippedweapon = null;
+    }
+
+    public void resetArmor(){
+	equippedarmor = null;
+    }
+    
+    public void equip(int a){
+	if(a == equippedweapon){
+	    equippedweapon = null;
+	}
+	if(a == equippedarmor){
+	    equippedarmor = null;
+	}
+
+	typeofitem = getItem(a).getType();
+	if(typeofitem != 0 && typeofitem != 1){
+	    System.out.println("This item cannot be equipped");
+	    return;
+	}
+
+	if(typeofitem == 0){
+	    equippedweapon = a;
+	}
+	if(typeofitem == 1){
+	    equippedarmor = a;
+	}
+    }
+
 
     public void display(){
 	super.display();

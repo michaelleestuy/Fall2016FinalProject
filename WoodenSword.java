@@ -7,6 +7,7 @@ public class WoodenSword extends Items{
 	setMagicDef(0);
 	setPrice(10);
 	setBPrice(15);
+	setType(0);
     }
 
     public String toString(){

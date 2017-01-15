@@ -18,6 +18,7 @@ public class Shop{
 	Items returned = b.removeItem(a);
 	int payment = returned.getPrice();
 	b.changeMoney(payment);
+	b.
     }
 
 
