@@ -1,5 +1,27 @@
 public abstract class Items{
     private int sellprice;
+    private int buyprice;
+    private int type;
+
+    //0 = weapon
+    //1 = armor
+    //2 = consumable
+
+    public void setType(int a){
+	type = a;
+    }
+
+    public int getType(){
+	return type;
+    }
+    
+    public void setBPrice(int a){
+	buyprice = a;
+    }
+
+    public int getBPrice(){
+	return buyprice;
+    }
 
     public void setPrice(int a){
         sellprice = a;

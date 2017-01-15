@@ -7,6 +7,39 @@ public abstract class Hero extends Character{
     private ArrayList<Items> items = new ArrayList<Items>();
     private ArrayList<Skills> skills = new ArrayList<Skills>();
 
+    private int equippedweapon = -1;
+    private int equippedarmor = -1;
+
+    public void resetWeapon(){
+	equippedweapon = -1;
+    }
+
+    public void resetArmor(){
+	equippedarmor = -1;
+    }
+    
+    public void equip(int a){
+	if(a == equippedweapon){
+	    equippedweapon = -1;
+	}
+	if(a == equippedarmor){
+	    equippedarmor = -1;
+	}
+
+	int typeofitem = getItem(a).getType();
+	if(typeofitem != 0 && typeofitem != 1){
+	    System.out.println("This item cannot be equipped");
+	    return;
+	}
+
+	if(typeofitem == 0){
+	    equippedweapon = a;
+	}
+	if(typeofitem == 1){
+	    equippedarmor = a;
+	}
+    }
+
 
     public void display(){
 	super.display();
@@ -22,6 +55,10 @@ public abstract class Hero extends Character{
     public Items getItem(int a){
 	return items.get(a);
     }
+
+    public Items removeItem(int a){
+	return items.remove(a);
+    }
     
     public void addSkill(Skills a){
 	skills.add(a);
@@ -30,62 +67,39 @@ public abstract class Hero extends Character{
     public Skills getSkill(int a){
 	return skills.get(a);
     }
-
+    /////////////////////////////////////////////////
     public int totalAtk(){
-	int a = 0;
-	for(Items item : items){
-	    a += item.getAtk();
-	}
-	a += getbatk();
+	int a = getbatk();
+        a += getItem(equippedweapon).getAtk();
+	a += getItem(equippedarmor).getAtk();
 	return a;
     }
 
     public int totalDef(){
-	int a = 0;
-	for(Items item : items){
-	    a += item.getDef();
-	}
-	a += getbdef();
+	int a = getbdef();
+        a += getItem(equippedweapon).getDef();
+	a += getItem(equippedarmor).getDef();
 	return a;
     }
 
     public int totalMagicAtk(){
-	int a = 0;
-	for(Items item : items){
-	    a += item.getMagicAtk();
-	}
-	a += getbmagicatk();
+        int a = getbmagicatk();
+        a += getItem(equippedweapon).getMagicAtk();
+	a += getItem(equippedarmor).getMagicAtk();
 	return a;
     }
 
     public int totalMagicDef(){
-	int a = 0;
-	for(Items item : items){
-	    a += item.getMagicDef();
-	}
-	a += getbmagicdef();
+        int a = getbmagicdef();
+        a += getItem(equippedweapon).getMagicDef();
+	a += getItem(equippedarmor).getMagicDef();
 	return a;
     }
   
-
+    ///////////////////////////////////////////////////
     public void useSkill(int a, Enemy b){
 	Skills skill = getSkill(a);
 	skill.useOn(this, b);
-
-	/*
-	int dam = getSkill(a).getDamage();
-	int man = getSkill(a).getMana();
-	if(man > getMP()){
-	    System.out.println(this + " does not have enough mana to use " + getSkill(a));
-	    return;
-	}
-	System.out.println(this + " used " + getSkill(a) + " on " + b);
-	System.out.println("did " + dam + " damage");
-	System.out.println("used " + man + " mana");
-	System.out.println();
-	this.changeMP(-1 * man);
-	b.changeHP(-1 * dam);
-	*/
     }
 
 
@@ -118,7 +132,7 @@ public abstract class Hero extends Character{
 	}
 	return false;
     }
-
+    
 
 }
 
