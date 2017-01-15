@@ -1,5 +1,14 @@
 public abstract class Items{
     private int sellprice;
+    private int buyprice;
+
+    public void setBPrice(int a){
+	buyprice = a;
+    }
+
+    public int getBPrice(){
+	return buyprice;
+    }
 
     public void setPrice(int a){
         sellprice = a;
