@@ -20,10 +20,10 @@ public abstract class Hero extends Character{
     
     public void equip(int a){
 	if(a == equippedweapon){
-	    equippedweapon = null;
+	    equippedweapon = -1;
 	}
 	if(a == equippedarmor){
-	    equippedarmor = null;
+	    equippedarmor = -1;
 	}
 
 	typeofitem = getItem(a).getType();
@@ -67,44 +67,36 @@ public abstract class Hero extends Character{
     public Skills getSkill(int a){
 	return skills.get(a);
     }
-    /*
+    /////////////////////////////////////////////////
     public int totalAtk(){
-	int a = 0;
-	for(Items item : items){
-	    a += item.getAtk();
-	}
-	a += getbatk();
+	int a = getbatk();
+        a += getItem(equippedweapon).getAtk();
+	a += getItem(equippedarmor).getAtk();
 	return a;
     }
 
     public int totalDef(){
-	int a = 0;
-	for(Items item : items){
-	    a += item.getDef();
-	}
-	a += getbdef();
+	int a = getbdef();
+        a += getItem(equippedweapon).getDef();
+	a += getItem(equippedarmor).getDef();
 	return a;
     }
 
     public int totalMagicAtk(){
-	int a = 0;
-	for(Items item : items){
-	    a += item.getMagicAtk();
-	}
-	a += getbmagicatk();
+        int a = getbmagicatk();
+        a += getItem(equippedweapon).getMagicAtk();
+	a += getItem(equippedarmor).getMagicAtk();
 	return a;
     }
 
     public int totalMagicDef(){
-	int a = 0;
-	for(Items item : items){
-	    a += item.getMagicDef();
-	}
-	a += getbmagicdef();
+        int a = getbmagicdef();
+        a += getItem(equippedweapon).getMagicDef();
+	a += getItem(equippedarmor).getMagicDef();
 	return a;
     }
   
-    */
+    ///////////////////////////////////////////////////
     public void useSkill(int a, Enemy b){
 	Skills skill = getSkill(a);
 	skill.useOn(this, b);
