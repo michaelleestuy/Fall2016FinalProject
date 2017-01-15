@@ -1,8 +1,8 @@
 public class Shop{
 
     public void buyItem(int a, Hero b){
-	purchase = getitem(a);
-	price = purchase.getBPrice();
+	Items purchase = getitem(a);
+	int price = purchase.getBPrice();
 
 	if(b.getMoney() < price){
 	    System.out.println("Not enough money");
@@ -14,7 +14,11 @@ public class Shop{
     }
 
 
-
+    public void sellItem(int a, Hero b){
+	Items returned = b.removeItem(a);
+	int payment = returned.getPrice();
+	b.changeMoney(payment);
+    }
 
 
 
