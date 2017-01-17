@@ -11,6 +11,9 @@ public abstract class Character{
     private int HPmax = 0;
     private int MPmax = 0;
 
+	public int getMaxHP(){
+		return HPmax;
+	}
     public void setMaxHP(int a){
 	HPmax += a;
     }

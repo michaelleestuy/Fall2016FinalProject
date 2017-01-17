@@ -2,6 +2,7 @@ import java.util.*;
 public class Warrior extends Hero{
     
     Bash basicbash = new Bash();
+	Slam basicslam = new Slam();
     WoodenSword basicsword = new WoodenSword();
 
     public Warrior(String n){
@@ -11,20 +12,10 @@ public class Warrior extends Hero{
 	changeHP(150);
 	changeMP(25);
 	addSkill(basicbash);
-	addItem(basicsword);
+	addSkill(basicslam);
     }
     
-    public void checkLevelUp(){
-        if(super.levelUp()){
-	    setMaxHP(25);
-	    setMaxMP(5);
-	    changeHP(25);
-	    changeMP(5);
-	    System.out.println(this + " leveled up to " + level);
-	    System.out.println("+25 HP");
-	    System.out.println("+5 MP");
-	}
-    }
+    
 
 
 

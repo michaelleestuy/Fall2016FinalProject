@@ -23,5 +23,7 @@ public abstract class Enemy extends Character{
 	a.changeXP(XP);
 	System.out.println(a + " gained " + XP + " XP");
     }
+	
+	abstract void attack(Hero a);
 
 }

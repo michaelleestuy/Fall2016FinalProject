@@ -67,32 +67,52 @@ public abstract class Hero extends Character{
     public Skills getSkill(int a){
 	return skills.get(a);
     }
+	
+	public ArrayList<Skills> getSkills(){
+		return skills;
+	}
     /////////////////////////////////////////////////
     public int totalAtk(){
 	int a = getbatk();
-        a += getItem(equippedweapon).getAtk();
-	a += getItem(equippedarmor).getAtk();
+    if(equippedweapon != -1){
+		a += getItem(equippedweapon).getAtk();
+	}
+	if(equippedarmor != -1){
+		a += getItem(equippedarmor).getAtk();
+	}
 	return a;
     }
 
     public int totalDef(){
 	int a = getbdef();
-        a += getItem(equippedweapon).getDef();
-	a += getItem(equippedarmor).getDef();
+    if(equippedweapon != -1){
+		a += getItem(equippedweapon).getDef();
+	}
+	if(equippedarmor != -1){
+		a += getItem(equippedarmor).getDef();
+	}
 	return a;
     }
 
     public int totalMagicAtk(){
         int a = getbmagicatk();
-        a += getItem(equippedweapon).getMagicAtk();
-	a += getItem(equippedarmor).getMagicAtk();
+    if(equippedweapon != -1){
+		a += getItem(equippedweapon).getMagicAtk();
+	}
+	if(equippedarmor != -1){
+		a += getItem(equippedarmor).getMagicAtk();
+	}
 	return a;
     }
 
     public int totalMagicDef(){
         int a = getbmagicdef();
-        a += getItem(equippedweapon).getMagicDef();
-	a += getItem(equippedarmor).getMagicDef();
+    if(equippedweapon != -1){
+		a += getItem(equippedweapon).getMagicDef();
+	}
+	if(equippedarmor != -1){
+		a += getItem(equippedarmor).getMagicDef();
+	}
 	return a;
     }
   
@@ -133,7 +153,41 @@ public abstract class Hero extends Character{
 	return false;
     }
     
-
+	public void checkLevelUp(){
+        if(levelUp()){
+	    setMaxHP(25);
+	    setMaxMP(5);
+	    changeHP(25);
+	    changeMP(5);
+	    System.out.println(this + " leveled up to " + level);
+		level ++;
+	    System.out.println("+25 HP");
+	    System.out.println("+5 MP");
+	}
+    }
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }
 
     
